@@ -761,8 +761,6 @@ footer p:first-child {
 }
 
 
-/* Custom checkbox */
-
 .evidence-item input {
     appearance: none;
 
@@ -785,16 +783,12 @@ footer p:first-child {
 }
 
 
-/* Checked state */
-
 .evidence-item input:checked {
     background: #6fffe9;
 
     border-color: #6fffe9;
 }
 
-
-/* Check mark */
 
 .evidence-item input:checked::after {
     content: "✓";
@@ -812,8 +806,6 @@ footer p:first-child {
 }
 
 
-/* Completed evidence */
-
 .evidence-item:has(input:checked) {
     border-color: #28665d;
 
@@ -822,8 +814,6 @@ footer p:first-child {
     background: #081b1b;
 }
 
-
-/* Mobile */
 
 @media (max-width: 600px) {
 
@@ -896,8 +886,6 @@ footer p:first-child {
 }
 
 
-/* Mobile */
-
 @media (max-width: 800px) {
 
     .risk-grid {
@@ -916,18 +904,24 @@ footer p:first-child {
 }
 
 .incident-search {
+    position: relative;
+    width: 100%;
     max-width: 850px;
     margin-bottom: 25px;
 }
 
 .incident-search input {
     width: 100%;
-    padding: 15px 18px;
+    height: 58px;
+
+    padding: 0 52px 0 20px;
+
+    box-sizing: border-box;
 
     background: #0a1421;
 
     border: 1px solid #193249;
-    border-radius: 8px;
+    border-radius: 10px;
 
     color: #e8f4ff;
 
@@ -935,7 +929,7 @@ footer p:first-child {
 
     outline: none;
 
-    transition: 0.25s;
+    transition: all 0.25s ease;
 }
 
 .incident-search input::placeholder {
@@ -945,43 +939,59 @@ footer p:first-child {
 .incident-search input:focus {
     border-color: #6fffe9;
 
-    box-shadow: 0 0 0 2px rgba(111, 255, 233, 0.08);
+    background: #0b1725;
+
+    box-shadow:
+        0 0 0 2px rgba(111, 255, 233, 0.06),
+        0 0 18px rgba(111, 255, 233, 0.08);
 }
 
-    position: relative;
-}
 
 .clear-search {
     position: absolute;
 
-    right: 14px;
+    right: 12px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
 
-    border: none;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid transparent;
+    border-radius: 7px;
 
     background: transparent;
 
     color: #6f8498;
 
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: all 0.2s ease;
 }
 
 .clear-search:hover {
     color: #6fffe9;
 
     background: #102333;
+
+    border-color: #193f4c;
+
+    box-shadow: 0 0 10px rgba(111, 255, 233, 0.08);
 }
 
+.clear-search:active {
+    transform: translateY(-50%) scale(0.94);
+}
 .timeline-section {
     padding: 90px 7%;
     background: #050a12;
