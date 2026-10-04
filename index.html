@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Incident Response Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            🛡️ CyberGuard
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#report">Report Incident</a>
+            <a href="#incidents">Incidents</a>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="dashboard">
+
+            <div class="hero-text">
+                <p class="tag">CYBER SECURITY • INCIDENT RESPONSE</p>
+
+                <h1>
+                    Cyber Incident<br>
+                    <span>Response Dashboard</span>
+                </h1>
+
+                <p>
+                    Monitor, analyze and manage cybersecurity incidents
+                    through a simple browser-based response dashboard.
+                </p>
+
+                <a href="#report" class="hero-button">
+                    Report an Incident
+                </a>
+            </div>
+
+            <div class="hero-icon">
+                🛡️
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats" id="dashboard">
+
+            <div class="stat-card">
+                <div class="stat-icon">🚨</div>
+                <div>
+                    <h2 id="totalIncidents">0</h2>
+                    <p>Total Incidents</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+                <div>
+                    <h2 id="highRiskIncidents">0</h2>
+                    <p>High Risk</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔴</div>
+                <div>
+                    <h2 id="criticalIncidents">0</h2>
+                    <p>Critical</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div>
+                    <h2 id="resolvedIncidents">0</h2>
+                    <p>Resolved</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Risk Summary -->
+
+<section class="risk-summary">
+
+    <div class="section-heading">
+
+        <p class="tag">SECURITY OVERVIEW</p>
+
+        <h2>Risk Summary</h2>
+
+        <p>
+            Overview of incidents based on their current risk level.
+        </p>
+
+    </div>
+
+
+    <div class="risk-grid">
+
+        <div class="risk-card low">
+            <span class="risk-icon">🟢</span>
+            <div>
+                <h3>Low Risk</h3>
+                <p id="lowRiskCount">0</p>
+            </div>
+        </div>
+
+
+        <div class="risk-card medium">
+            <span class="risk-icon">🟡</span>
+            <div>
+                <h3>Medium Risk</h3>
+                <p id="mediumRiskCount">0</p>
+            </div>
+        </div>
+
+
+        <div class="risk-card high">
+            <span class="risk-icon">🟠</span>
+            <div>
+                <h3>High Risk</h3>
+                <p id="highRiskCountSummary">0</p>
+            </div>
+        </div>
+
+
+        <div class="risk-card critical">
+            <span class="risk-icon">🔴</span>
+            <div>
+                <h3>Critical Risk</h3>
+                <p id="criticalRiskCountSummary">0</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+        <!-- Report Incident -->
+        <section class="report-section" id="report">
+
+            <div class="section-heading">
+                <p class="tag">INCIDENT MANAGEMENT</p>
+
+                <h2>Report a New Incident</h2>
+
+                <p>
+                    Record a cybersecurity incident for analysis and response.
+                </p>
+            </div>
+
+
+            <form id="incidentForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="incidentName">
+                            Incident Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="incidentName"
+                            placeholder="Example: Suspicious Email"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="incidentType">
+                            Incident Type
+                        </label>
+
+                        <select id="incidentType" required>
+                            <option value="">Select Type</option>
+                            <option value="Phishing">Phishing</option>
+                            <option value="Malware">Malware</option>
+                            <option value="Unauthorized Access">
+                                Unauthorized Access
+                            </option>
+                            <option value="Data Breach">
+                                Data Breach
+                            </option>
+                            <option value="Social Engineering">
+                                Social Engineering
+                            </option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="riskLevel">
+                            Risk Level
+                        </label>
+
+                        <select id="riskLevel" required>
+                            <option value="">Select Risk</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="incidentStatus">
+                            Status
+                        </label>
+
+                        <select id="incidentStatus" required>
+                            <option value="Open">Open</option>
+                            <option value="Investigating">
+                                Investigating
+                            </option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Incident Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Describe what happened..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-button">
+                    🚨 Report Incident
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Response Process -->
+        <section class="response-section">
+
+            <div class="section-heading">
+
+                <p class="tag">INCIDENT RESPONSE</p>
+
+                <h2>Response Process</h2>
+
+                <p>
+                    Follow a structured approach when handling a
+                    cybersecurity incident.
+                </p>
+
+            </div>
+
+
+            <div class="response-steps">
+
+                <div class="response-card">
+                    <span>01</span>
+                    <h3>Identify</h3>
+                    <p>
+                        Detect and identify the security incident.
+                    </p>
+                </div>
+
+
+                <div class="response-card">
+                    <span>02</span>
+                    <h3>Contain</h3>
+                    <p>
+                        Limit the impact and prevent further spread.
+                    </p>
+                </div>
+
+
+                <div class="response-card">
+                    <span>03</span>
+                    <h3>Analyze</h3>
+                    <p>
+                        Examine evidence and determine what happened.
+                    </p>
+                </div>
+
+
+                <div class="response-card">
+                    <span>04</span>
+                    <h3>Recover</h3>
+                    <p>
+                        Restore normal operations and document the incident.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Incident Timeline -->
+
+<section class="timeline-section">
+
+    <div class="section-heading">
+
+        <p class="tag">INCIDENT RESPONSE</p>
+
+        <h2>Incident Timeline</h2>
+
+        <p>
+            Standard stages followed during a cybersecurity incident investigation.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot">1</div>
+
+            <div class="timeline-content">
+
+                <h3>Incident Reported</h3>
+
+                <p>
+                    The security incident is identified and reported for investigation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot">2</div>
+
+            <div class="timeline-content">
+
+                <h3>Investigation Started</h3>
+
+                <p>
+                    Available information and evidence are reviewed to understand the incident.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot">3</div>
+
+            <div class="timeline-content">
+
+                <h3>Evidence Collected</h3>
+
+                <p>
+                    Relevant digital evidence is collected and documented for analysis.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot">4</div>
+
+            <div class="timeline-content">
+
+                <h3>Incident Resolved</h3>
+
+                <p>
+                    Response actions are completed and the incident is marked as resolved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- System Status -->
+
+<section class="system-status-section">
+
+    <div class="section-heading">
+
+        <p class="tag">SYSTEM MONITOR</p>
+
+        <h2>System Status</h2>
+
+        <p>
+            Current status of dashboard security and response features.
+        </p>
+
+    </div>
+
+
+    <div class="system-status-grid">
+
+        <div class="system-status-card">
+
+            <span class="status-indicator"></span>
+
+            <div>
+                <h3>Dashboard Online</h3>
+                <p>System is operational</p>
+            </div>
+
+        </div>
+
+
+        <div class="system-status-card">
+
+            <span class="status-indicator"></span>
+
+            <div>
+                <h3>Local Storage</h3>
+                <p>Incident data storage active</p>
+            </div>
+
+        </div>
+
+
+        <div class="system-status-card">
+
+            <span class="status-indicator"></span>
+
+            <div>
+                <h3>Evidence Tracking</h3>
+                <p>Checklist system active</p>
+            </div>
+
+        </div>
+
+
+        <div class="system-status-card">
+
+            <span class="status-indicator"></span>
+
+            <div>
+                <h3>Report Generator</h3>
+                <p>Report export ready</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+         <!-- Evidence Checklist -->
+<section class="evidence-section">
+
+    <div class="section-heading">
+
+        <p class="tag">DIGITAL FORENSICS</p>
+
+        <h2>Evidence Checklist</h2>
+
+        <p>
+            Track important evidence collection steps during
+            incident investigation.
+        </p>
+
+    </div>
+
+
+    <div class="evidence-checklist">
+
+        <label class="evidence-item">
+            <input type="checkbox">
+            <span>Suspicious email or message collected</span>
+        </label>
+
+
+        <label class="evidence-item">
+            <input type="checkbox">
+            <span>Relevant screenshots captured</span>
+        </label>
+
+
+        <label class="evidence-item">
+            <input type="checkbox">
+            <span>Important files preserved</span>
+        </label>
+
+
+        <label class="evidence-item">
+            <input type="checkbox">
+            <span>System or security logs reviewed</span>
+        </label>
+
+
+        <label class="evidence-item">
+            <input type="checkbox">
+            <span>Evidence properly documented</span>
+        </label>
+
+    </div>
+
+</section>
+
+        <!-- Incidents -->
+        <section class="incidents-section" id="incidents">
+
+            <div class="section-heading">
+
+                <p class="tag">INCIDENT LOG</p>
+                
+
+             <!-- Incident Search -->
+
+             <div class="incident-search">
+
+             <input
+                type="text"
+                id="incidentSearch"
+                placeholder="Search incidents by name or type..."
+                 >
+               
+               <button
+                type="button"
+               id="clearSearch"
+              class="clear-search"
+                 title="Clear search"
+                >
+                 ✕
+                </button>
+
+                 </div>
+
+
+            <div id="incidentList" class="incident-list">
+
+                <div class="empty-state">
+                    <div>🔍</div>
+
+                    <h3>No incidents recorded</h3>
+
+                    <p>
+                        Report your first cybersecurity incident above.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            🛡️ CyberGuard Incident Response Dashboard
+        </p>
+
+        <p>
+            Educational Cybersecurity Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
