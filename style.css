@@ -58,10 +58,6 @@ nav a:hover {
 }
 
 
-/* ========================================
-   HERO
-======================================== */
-
 .hero {
     min-height: 570px;
     padding: 100px 7%;
@@ -178,10 +174,6 @@ nav a:hover {
 }
 
 
-/* ========================================
-   STATISTICS
-======================================== */
-
 .stats {
     padding: 35px 7%;
 
@@ -245,10 +237,6 @@ nav a:hover {
 }
 
 
-/* ========================================
-   GENERAL SECTIONS
-======================================== */
-
 .report-section,
 .response-section,
 .incidents-section {
@@ -281,9 +269,6 @@ nav a:hover {
 }
 
 
-/* ========================================
-   FORM
-======================================== */
 
 form {
     max-width: 920px;
@@ -375,10 +360,6 @@ textarea {
 }
 
 
-/* ========================================
-   RESPONSE PROCESS
-======================================== */
-
 .response-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -429,10 +410,6 @@ textarea {
 }
 
 
-/* ========================================
-   INCIDENT LIST
-======================================== */
-
 .incident-list {
     display: grid;
     gap: 18px;
@@ -460,10 +437,6 @@ textarea {
     margin-bottom: 5px;
 }
 
-
-/* ========================================
-   INCIDENT CARD
-======================================== */
 
 .incident-card {
     background: #0a1421;
@@ -514,10 +487,6 @@ textarea {
 }
 
 
-/* ========================================
-   RISK BADGES
-======================================== */
-
 .badge {
     padding: 5px 11px;
 
@@ -551,10 +520,6 @@ textarea {
 }
 
 
-/* ========================================
-   INCIDENT ACTIONS
-======================================== */
-
 .incident-actions {
     display: flex;
 
@@ -565,10 +530,6 @@ textarea {
     margin-top: 18px;
 }
 
-
-/* ========================================
-   STATUS CONTROL
-======================================== */
 
 .status-select {
     padding: 8px 32px 8px 12px;
@@ -597,10 +558,6 @@ textarea {
     border-color: #356174;
 }
 
-
-/* ========================================
-   MINIMAL REMOVE BUTTON
-======================================== */
 
 .delete-button {
     width: 31px;
@@ -643,11 +600,6 @@ textarea {
     transform: scale(0.94);
 }
 
-
-/* ========================================
-   FOOTER
-======================================== */
-
 footer {
     padding: 32px 7%;
 
@@ -669,10 +621,6 @@ footer p:first-child {
 }
 
 
-/* ========================================
-   SCROLLBAR
-======================================== */
-
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -691,10 +639,6 @@ footer p:first-child {
     background: #286276;
 }
 
-
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
 
 @media (max-width: 900px) {
 
@@ -771,9 +715,6 @@ footer p:first-child {
     }
 
 }
-/* ========================================
-   EVIDENCE CHECKLIST
-======================================== */
 
 .evidence-section {
     padding: 95px 7%;
@@ -895,9 +836,6 @@ footer p:first-child {
     }
 
 }
-/* ========================================
-   RISK SUMMARY
-======================================== */
 
 .risk-summary {
     padding: 80px 7%;
@@ -976,9 +914,6 @@ footer p:first-child {
     }
 
 }
-/* ========================================
-   INCIDENT SEARCH
-======================================== */
 
 .incident-search {
     max-width: 850px;
@@ -1012,11 +947,7 @@ footer p:first-child {
 
     box-shadow: 0 0 0 2px rgba(111, 255, 233, 0.08);
 }
-/* ========================================
-   CLEAR SEARCH BUTTON
-======================================== */
 
-.incident-search {
     position: relative;
 }
 
@@ -1050,9 +981,6 @@ footer p:first-child {
 
     background: #102333;
 }
-/* ========================================
-   INCIDENT TIMELINE
-======================================== */
 
 .timeline-section {
     padding: 90px 7%;
@@ -1066,8 +994,6 @@ footer p:first-child {
     position: relative;
 }
 
-
-/* Vertical timeline line */
 
 .timeline::before {
     content: "";
@@ -1084,8 +1010,6 @@ footer p:first-child {
 }
 
 
-/* Timeline item */
-
 .timeline-item {
     position: relative;
 
@@ -1096,8 +1020,6 @@ footer p:first-child {
     margin-bottom: 35px;
 }
 
-
-/* Number circle */
 
 .timeline-dot {
     width: 42px;
@@ -1125,8 +1047,6 @@ footer p:first-child {
     z-index: 1;
 }
 
-
-/* Timeline content */
 
 .timeline-content {
     flex: 1;
@@ -1167,8 +1087,6 @@ footer p:first-child {
 }
 
 
-/* Mobile */
-
 @media (max-width: 600px) {
 
     .timeline-section {
@@ -1191,9 +1109,7 @@ footer p:first-child {
     }
 
 }
-/* ========================================
-   INCIDENT REPORT BUTTON
-======================================== */
+
 
 .report-button {
     padding: 9px 16px;
@@ -1228,9 +1144,7 @@ footer p:first-child {
 .report-button:active {
     transform: translateY(0);
 }
-/* ========================================
-   SYSTEM STATUS
-======================================== */
+
 
 .system-status-section {
     padding: 85px 7%;
@@ -1296,8 +1210,6 @@ footer p:first-child {
     font-size: 12px;
 }
 
-
-/* Mobile */
 
 @media (max-width: 800px) {
 
