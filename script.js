@@ -1,11 +1,4 @@
-
 let incidents = JSON.parse(localStorage.getItem("cyberIncidents")) || [];
-
-
-// ========================================
-// HTML ELEMENTS
-// ========================================
-
 const incidentForm = document.getElementById("incidentForm");
 const incidentList = document.getElementById("incidentList");
 
@@ -13,11 +6,6 @@ const totalIncidents = document.getElementById("totalIncidents");
 const highRiskIncidents = document.getElementById("highRiskIncidents");
 const criticalIncidents = document.getElementById("criticalIncidents");
 const resolvedIncidents = document.getElementById("resolvedIncidents");
-
-
-// ========================================
-// DISPLAY INCIDENTS
-// ========================================
 
 function displayIncidents() {
 
@@ -130,9 +118,6 @@ function displayIncidents() {
 }
 
 
-// ========================================
-// ADD NEW INCIDENT
-// ========================================
 
 incidentForm.addEventListener("submit", function(event) {
 
@@ -208,11 +193,6 @@ incidentForm.addEventListener("submit", function(event) {
 
 });
 
-
-// ========================================
-// CHANGE INCIDENT STATUS
-// ========================================
-
 function changeStatus(index, newStatus) {
 
     incidents[index].status = newStatus;
@@ -230,10 +210,6 @@ function changeStatus(index, newStatus) {
 
 }
 
-
-// ========================================
-// DELETE INCIDENT
-// ========================================
 
 function deleteIncident(index) {
 
@@ -259,11 +235,6 @@ function deleteIncident(index) {
     displayIncidents();
 
 }
-
-
-// ========================================
-// UPDATE DASHBOARD STATISTICS
-// ========================================
 
 function updateStatistics() {
 
@@ -316,8 +287,6 @@ const criticalRiskSummary = incidents.filter(
 ).length;
 
 
-// Update Risk Summary
-
 document.getElementById("lowRiskCount").textContent = lowRisk;
 
 document.getElementById("mediumRiskCount").textContent = mediumRisk;
@@ -342,9 +311,6 @@ function escapeHTML(value) {
 
 
 displayIncidents();
-// ========================================
-// EVIDENCE CHECKLIST STORAGE
-// ========================================
 
 const evidenceItems = document.querySelectorAll(
     ".evidence-item input"
@@ -355,16 +321,12 @@ const evidenceItems = document.querySelectorAll(
 const savedEvidence =
     JSON.parse(localStorage.getItem("evidenceChecklist")) || [];
 
-
-// Restore checked items
 evidenceItems.forEach((checkbox, index) => {
 
     checkbox.checked = savedEvidence[index] || false;
 
 });
 
-
-// Save checklist whenever a checkbox changes
 evidenceItems.forEach((checkbox, index) => {
 
     checkbox.addEventListener("change", function() {
@@ -379,9 +341,7 @@ evidenceItems.forEach((checkbox, index) => {
     });
 
 });
-// ========================================
-// INCIDENT SEARCH
-// ========================================
+
 
 const incidentSearch = document.getElementById("incidentSearch");
 
@@ -398,10 +358,6 @@ incidentSearch.addEventListener("input", function () {
 
 });
 
-
-// ========================================
-// DISPLAY SEARCH RESULTS
-// ========================================
 
 function displayFilteredIncidents(filteredIncidents) {
 
@@ -517,9 +473,6 @@ function displayFilteredIncidents(filteredIncidents) {
     });
 
 }
-// ========================================
-// CLEAR INCIDENT SEARCH
-// ========================================
 
 const clearSearch = document.getElementById("clearSearch");
 
@@ -530,9 +483,6 @@ clearSearch.addEventListener("click", function () {
     displayIncidents();
 
 });
-// ========================================
-// DOWNLOAD INCIDENT REPORT
-// ========================================
 
 function downloadIncidentReport(index) {
 
